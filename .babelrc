@@ -8,7 +8,9 @@
       "alias": {
         "~components": "./src/app/components",
         "~screens": "./src/app/screens",
-        "~redux": "./src/redux"
+        "~store": "./src/store",
+        "~services": "./src/services",
+        "~utils": "./src/utils"
       }
     }]
   ]

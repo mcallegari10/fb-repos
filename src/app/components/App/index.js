@@ -1,23 +1,31 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import logo from '../../../logo.svg';
+import Home from '~screens/Home';
 
-import style from './styles.scss';
+import Sidebar from '~components/Sidebar';
 
-class App extends Component {
-  render() {
-    return (
-      <div className={style.app}>
-        <header className={style.appHeader}>
-          <img src={logo} className={style.appLogo} alt="logo" />
-          <h1 className={style.appTitle}>Welcome to React</h1>
-        </header>
-        <p className={style.appIntro}>
-          To get started, edit <code>src/app/components/App/index.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const routes = {
+  Home
+};
 
-export default App;
+const App = ({ route }) => {
+  const Route = routes[route];
+  return (
+    <Fragment>
+      <Route />
+      <Sidebar />
+    </Fragment>
+  );
+};
+
+App.propTypes = {
+  route: PropTypes.string.isRequired
+};
+
+const mapStateToProps = state => ({
+  route: state.routes
+});
+
+export default connect(mapStateToProps)(App);

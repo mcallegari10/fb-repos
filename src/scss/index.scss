@@ -1,5 +1,8 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+@import 'overrides/equalizer';
+
+@import 'variables/sizes';
+@import 'variables/colors';
+
+@import 'commons/displays';
+@import 'commons/spaces';
+@import 'commons/texts';

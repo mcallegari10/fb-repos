@@ -1,0 +1,13 @@
+@import 'variables/sizes';
+
+.container {
+  border-right: 1px solid;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  max-width: $sidebar-size;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}

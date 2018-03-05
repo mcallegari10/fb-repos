@@ -13,18 +13,15 @@ class RepoDetail extends Component {
   };
 
   componentWillMount() {
-    getRepo(this.props.repo).then(response =>
-      this.setState({ repo: response.data }, () => this.getContributors())
-    );
+    this.getRepoDetails(this.props.repo);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.repo !== this.props.repo) {
-      getRepo(nextProps.repo).then(response =>
-        this.setState({ repo: response.data }, () => this.getContributors())
-      );
-    }
+    if (nextProps.repo !== this.props.repo) this.getRepoDetails(nextProps.repo);
   }
+
+  getRepoDetails = repo =>
+    getRepo(repo).then(response => this.setState({ repo: response.data }, () => this.getContributors()));
 
   getContributors = () =>
     getContributors(this.props.repo).then(response => this.setState({ contributors: response.data }));

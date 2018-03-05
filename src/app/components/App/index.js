@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Home from '~screens/Home';
+import RepoDetail from '~screens/RepoDetail';
 
 import Sidebar from '~components/Sidebar';
 
 const routes = {
-  Home
+  Home,
+  RepoDetail
 };
 
 const App = ({ route }) => {

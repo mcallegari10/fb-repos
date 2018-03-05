@@ -2,11 +2,13 @@ import { connectRoutes } from 'redux-first-router';
 import createHistory from 'history/createBrowserHistory';
 
 const components = {
-  HOME: 'Home'
+  HOME: 'Home',
+  REPO_DETAIL: 'RepoDetail'
 };
 
 const routesMap = {
-  HOME: '/'
+  HOME: '/',
+  REPO_DETAIL: '/repo/:name'
 };
 
 const history = createHistory();
